@@ -1,0 +1,100 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    /* A more luxurious background */
+    background: linear-gradient(135deg, #E67E22 0%, #F39C12 100%); /* Warm orange gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+.container {
+    background: #fff;
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+.logo {
+    max-width: 250px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+header p {
+    margin-bottom: 2rem;
+    color: #4E443A; /* Dark, warm color for readability on orange */
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li {
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: #d4af37; /* Gold color for text and icon */
+    background-color: transparent;
+    border: 2px solid #d4af37; /* Gold border */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.social-links a i {
+    margin-right: 10px;
+    font-size: 1.4rem;
+    width: 25px; /* To align text */
+    text-align: center;
+}
+
+/* On hover, fill with brand color */
+.social-links a:hover {
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.social-links li:nth-child(1) a:hover {
+    background-color: #3b5998; /* Facebook */
+    border-color: #3b5998;
+}
+.social-links li:nth-child(2) a:hover {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); /* Instagram */
+    border-color: #bc1888; /* Use a color from the gradient for the border */
+}
+.social-links li:nth-child(3) a:hover {
+    background-color: #c4302b; /* YouTube */
+    border-color: #c4302b;
+}
+.social-links li:nth-child(4) a:hover {
+    background-color: #4285F4; /* Google */
+    border-color: #4285F4;
+}
