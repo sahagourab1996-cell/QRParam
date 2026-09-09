@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Card — Print</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+
+  /* ── A6 counter card: 105 x 148 mm ─────────────────────── */
+  @page{size:105mm 148mm;margin:0}
+
+  body{
+    font-family:'Outfit',system-ui,sans-serif;
+    background:#3a3a44;              /* screen only — the card itself is white */
+    display:flex;justify-content:center;align-items:flex-start;
+    padding:24px;min-height:100vh;
+  }
+
+  .card{
+    width:105mm;height:148mm;
+    background:#fff;color:#1a1a1a;
+    display:flex;flex-direction:column;align-items:center;
+    padding:7mm 8mm 6mm;
+    text-align:center;
+    position:relative;
+    box-shadow:0 10px 40px rgba(0,0,0,.45);   /* screen only */
+    overflow:hidden;
+  }
+
+  /* thin gold rule inset from the trim edge */
+  .card::before{
+    content:"";position:absolute;inset:4mm;
+    border:.4mm solid #c9a227;border-radius:2mm;
+    pointer-events:none;
+  }
+
+  .logo{width:36mm;height:auto;margin-bottom:3.5mm}
+
+  .eyebrow{
+    font-size:2.7mm;letter-spacing:.3em;text-transform:uppercase;
+    color:#9a7d1e;font-weight:500;margin-bottom:1.5mm;
+  }
+
+  h1{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:6.4mm;font-weight:600;line-height:1.12;
+    color:#8f1218;margin-bottom:1.2mm;
+  }
+
+  .sub{font-size:3.1mm;color:#555;font-weight:300;margin-bottom:2.5mm}
+
+  .stars{color:#f0b323;font-size:4.2mm;letter-spacing:.8mm;margin-bottom:3mm}
+
+  /* ── the code itself ───────────────────────────────────── */
+  .qr{
+    width:45mm;height:45mm;
+    padding:2.2mm;background:#fff;
+    border:.4mm solid #e6e0cf;border-radius:2mm;
+  }
+  .qr img{width:100%;height:100%;display:block}
+
+  .scan{
+    margin-top:3mm;
+    font-size:3.3mm;font-weight:500;letter-spacing:.06em;color:#1a1a1a;
+  }
+  .scan small{display:block;font-size:2.6mm;font-weight:300;color:#666;margin-top:.8mm}
+
+  footer{
+    margin-top:auto;
+    font-size:2.5mm;letter-spacing:.14em;text-transform:uppercase;color:#8a8a8a;padding-bottom:1mm;
+  }
+  footer b{display:block;font-size:2.9mm;color:#8f1218;letter-spacing:.1em;margin-bottom:.8mm}
+
+  /* ── screen-only helper bar ────────────────────────────── */
+  .hint{
+    max-width:105mm;margin:18px auto 0;color:#e8e8ea;
+    font-size:13px;line-height:1.55;text-align:left;
+  }
+  .hint b{color:#f7e39b}
+  .hint code{background:#22222a;padding:1px 5px;border-radius:4px;font-size:12px}
+  .print-btn{
+    display:inline-block;margin-top:10px;padding:9px 18px;border:0;border-radius:999px;
+    background:linear-gradient(90deg,#f7e39b,#d4af37);color:#1a1a1a;
+    font:inherit;font-size:13px;font-weight:500;cursor:pointer;
+  }
+
+  @media print{
+    body{background:#fff;padding:0;display:block;min-height:0}
+    .card{box-shadow:none;width:105mm;height:148mm}
+    .hint{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="card">
+    <img src="logo.png" alt="Parama Jewellery Museum" class="logo">
+
+    <p class="eyebrow">Thank you for visiting</p>
+    <h1>Loved what you found?</h1>
+    <p class="sub">Your review helps other families find us.</p>
+    <div class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+
+    <div class="qr"><img src="qr-review.svg" alt="Scan to review Parama Jewellery Museum on Google"></div>
+
+    <p class="scan">Scan to rate us on Google
+      <small>Open your camera &middot; point &middot; tap the link</small>
+    </p>
+
+    <footer>
+      <b>Parama Jewellery Museum</b>
+      Bhatrapally &middot; Kolkata
+    </footer>
+  </div>
+
+  <div class="hint">
+    <p><b>To print:</b> press the button below (or Ctrl&nbsp;+&nbsp;P) and choose
+       <code>Save as PDF</code>. Paper size <b>A6</b>, margins <b>None</b>,
+       and tick <b>Background graphics</b> so the gold rule and logo print.</p>
+    <p style="margin-top:8px">For a counter standee, print on 250&ndash;300&nbsp;gsm matte card.
+       Matte, not glossy &mdash; shop lighting glares off gloss and phones struggle to read the code.</p>
+    <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+</div>
+
+</body>
+</html>
